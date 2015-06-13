@@ -11,9 +11,8 @@ body {
 	line-height: 1.7;
 	color: #111;
 	background: #aec5e8;
-	background: linear-gradient(to bottom, #758cba, #aec5e8 10em);
-	margin: 0 auto;
-	padding: 2em;
+	margin: 120px auto 0;
+	padding: 4em 0 0;
 	border-radius: .3em;
 	font-family: "Raleway", Arial, sans-serif;;
 }
@@ -24,6 +23,150 @@ h1 {
 	font-size: 200%;
 	margin-top: 0;
 }
+
+header {
+	background: #aec5e8;
+	background: linear-gradient(to bottom, #758cba, #aec5e8 10em);
+	padding: 2em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	box-shadow: 0 0 10px #111;
+	z-index: 1;
+	transition: all .3s cubic-bezier(0,1.38,.73,.95);
+}
+header a:focus,
+header a:hover {
+	border-bottom: 1px solid;
+}
+
+.web-developer header {
+	background: #F06529;
+	background: linear-gradient(to bottom, #E34C26, #F06529 10em);
+}
+.dad header {
+	background: #74B63B;
+	background: linear-gradient(to bottom, #0B7648, #74B63B 10em);
+}
+.mentor header {
+	background: #6799FF;
+	background: linear-gradient(to bottom, #6799FF, #E6EEFF 10em);
+}
+.animator header {
+	background: #FBA23C;
+	background: linear-gradient(to bottom, #E07C17, #FBA23C 10em);
+}
+.sunshine header {
+	background: #aec5e8;
+	background: linear-gradient(to bottom, orange, yellow 10em);
+}
+.gamer header {
+	background: #1A2738;
+	background: linear-gradient(to bottom, #000, #1A2738 10em);
+}
+.universal-design header {
+	background: #DFEBF7;
+	background: linear-gradient(to bottom, #005A9C, #DFEBF7 10em);
+}
+.gadgets header {
+	background: #1A2738;
+	background: linear-gradient(to bottom, silver, #fafafa 10em);
+}
+.web-developer header,
+.web-developer a,
+.gamer header,
+.gamer a {
+	color: #fafafa;
+	color: #fafafa;
+}
+.web-developer a[href$="#web-developer"],
+.dad a[href$="#dad"],
+.gamer a[href$="#gamer"],
+.mentor a[href$="#mentor"],
+.animator a[href$="#animator"],
+.universal-design a[href$="#universal-design"],
+.gadgets a[href$="#gadgets"],
+.sunshine a[href$="#sunshine"] {
+	border-bottom: 2px solid;
+}
+
+header > h1,
+header > nav {
+	margin-right: 120px;
+}
+#avatar {
+	position: fixed;
+	right: 2em;
+	top: 2em;
+}
+#avatar > img {
+	border-radius: 50%;
+}
+header a {
+	color: #111;
+	text-decoration: none;
+}
+
+section {
+	clear: both;
+	display: block;
+	padding: 2em;
+/* 	height: 0;
+overflow: hidden;
+opacity: 0;
+transform: scaleY(0);
+transition:
+	opacity 0.3s ease,
+	transform 0.3s cubic-bezier(.2,.38,.72,1.3);
+ */}
+section:target {
+	height: auto;
+	opacity: 1;
+	transform: scaleY(1);
+}
+section > h2 {
+	margin-top: 4rem;
+}
+
+
+/* visibility */
+
+.main .web-developer,
+.web-developer .web-developer,
+.main .dad,
+.dad .dad,
+.main .gamer,
+.gamer .gamer,
+.main .mentor,
+.mentor .mentor,
+.main .animator,
+.animator .animator,
+.main .universal-design,
+.universal-design .universal-design,
+.main .gadgets,
+.gadgets .gadgets,
+.main .sunshine,
+.sunshine .sunshine,
+.gallery li:hover {
+	opacity: 1;
+	transform: scaleX(1);
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s cubic-bezier(.2,.38,.72,1.3);
+}
+li.web-developer,
+li.dad,
+li.gamer,
+li.mentor,
+li.animator,
+li.universal-design,
+li.gadgets,
+li.sunshine {
+	opacity: 0.2;
+	transform: scaleX(0.5);
+	overflow: hidden;
+}
+
 
 figure {
 	display: block;
@@ -72,16 +215,9 @@ figure img {
 	width: 240px;
 	height: 135px;
 }
-/*
-.gallery a:focus img,
-.gallery a:hover img {
-	width: 960px;
-	height: 540px;
-	transition: height .7s, width .2s .5s;
-}
-*/
 aside {
 	clear: both;
+	padding: 2em;
 }
 
 @media (max-width: 750px) {
@@ -102,200 +238,263 @@ aside {
 </style>
 </head>
 
-<body>
+<body class="main">
 
-<nav>
-	<h1>Ultimate Ben Boyle!</h1>
+<main id="main" aria-role="main">
+	<header>
+		<h1>Ultimate Ben Boyle!</h1>
+		<a id="avatar" href="#main"><img src="http://www.gravatar.com/avatar/09e9086e16db4147b55f295dab8bd390?size=120" alt="Ben Boyle's gravatar"></a>
+		<nav>
+			<p>
+				<a href="#web-developer">Web developer</a>,
+				<a href="#dad">Dad</a>,
+				<a href="#gamer">gamer</a>,
+				<a href="#mentor">mentor</a>,
+				<a href="#animator">animator</a>,
+				<a href="#universal-design">universal design advocate</a>,
+				<a href="#gadgets">fan of gadgets</a>
+				<a href="#sunshine">and sunshine</a>!
+			</p>
+		</nav>
+	</header>
 
-	<p>Web developer, Dad, gamer, mentor, animator, universal design advocate, fan of gadgets and sunshine!</p>
 
-	<p>You can find me on:</p>
-	<ul class="gallery">
+	<section id="links">
+		<p>You can find me on:</p>
+		<ul class="gallery">
 
-		<li class="gadgets commuter ranter blog">
-			<a href="http://spiii.wordpress.com/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/blog/" alt="" />
-					<figcaption>Ben Boyle lives here! (blog)</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="web-developer universal-design animator gadgets commuter ranter blog">
+				<a href="http://spiii.wordpress.com/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/blog/" alt="" />
+						<figcaption>Ben Boyle lives here! (blog)</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="sunshine commuter photo">
-			<a href="http://instagram.com/bboyle/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/instagram/" alt="" />
-					<figcaption>bboyle on instagram</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="sunshine dad commuter photo">
+				<a href="http://instagram.com/bboyle/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/instagram/" alt="" />
+						<figcaption>bboyle on instagram</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="web-developer universal-design work">
-			<a href="http://www.linkedin.com/in/benboyle">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/linkedin/" alt="" />
-					<figcaption>Ben Boyle on LinkedIn</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="web-developer universal-design work">
+				<a href="http://www.linkedin.com/in/benboyle">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/linkedin/" alt="" />
+						<figcaption>Ben Boyle on LinkedIn</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="web-developer universal-design work ui">
-			<a href="http://www.flickr.com/photos/benjamins-boyle/sets/72157629342137529/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/flickr/ui/" alt="" />
-					<figcaption>UI design set on Flickr</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="web-developer universal-design work ui">
+				<a href="http://www.flickr.com/photos/benjamins-boyle/sets/72157629342137529/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/flickr/ui/" alt="" />
+						<figcaption>UI design set on Flickr</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="web-developer work code ui">
-			<a href="https://github.com/bboyle/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/github/" alt="" />
-					<figcaption>bboyle on github</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="web-developer work code ui universal-design">
+				<a href="https://github.com/bboyle/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/github/" alt="" />
+						<figcaption>bboyle on github</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="web-developer code mockup">
-			<a href="http://codepen.io/bboyle/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/codepen/" alt="" />
-					<figcaption>bboyle on codepen</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="web-developer universal-design code mockup">
+				<a href="http://codepen.io/bboyle/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/codepen/" alt="" />
+						<figcaption>bboyle on codepen</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="web-developer code study">
-			<a href="http://cssdeck.com/user/bboyle">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/cssdeck/" alt="" />
-					<figcaption>bboyle on cssdeck</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="web-developer code">
+				<a href="http://stackoverflow.com/users/287568/ben-boyle">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/stackoverflow/" alt="" />
+						<figcaption>Ben Boyle on Stack Overflow</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="web-developer code">
-			<a href="http://stackoverflow.com/users/287568/ben-boyle">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/stackoverflow/" alt="" />
-					<figcaption>Ben Boyle on Stack Overflow</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="dad ranter sunshine personal">
+				<a href="http://www.facebook.com/benjamins.boyle">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/facebook/" alt="" />
+						<figcaption>Ben Boyle on facebook</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="dad ranter sunshine personal">
-			<a href="http://www.facebook.com/benjamins.boyle">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/facebook/" alt="" />
-					<figcaption>Ben Boyle on facebook</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="ranter gadgets personal blog">
+				<a href="http://twitter.com/#!/bboyle/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/twitter/" alt="" />
+						<figcaption>bboyle on twitter</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="ranter gadgets personal blog">
-			<a href="http://twitter.com/#!/bboyle/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/twitter/" alt="" />
-					<figcaption>bboyle on twitter</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="web-developer">
+				<a href="https://plus.google.com/103003457638609975081/about">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/google/" alt="" />
+						<figcaption>Ben Boyle on google+</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="web-developer">
-			<a href="https://plus.google.com/103003457638609975081/about">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/google/" alt="" />
-					<figcaption>Ben Boyle on google+</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="sunshine art animator">
+				<a href="http://benjamins-boyle.deviantart.com/gallery/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/deviantart/" alt="" />
+						<figcaption>~benjamins-boyle on deviantART</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="sunshine art">
-			<a href="http://benjamins-boyle.deviantart.com/gallery/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/deviantart/" alt="" />
-					<figcaption>~benjamins-boyle on deviantART</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="dad sunshine photo">
+				<a href="http://www.flickr.com/photos/benjamins-boyle/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/flickr/" alt="" />
+						<figcaption>Flickr - spiii's photostream</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="dad sunshine photo">
-			<a href="http://www.flickr.com/photos/benjamins-boyle/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/flickr/" alt="" />
-					<figcaption>Flickr - spiii's photostream</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="gamer">
+				<a href="http://steamcommunity.com/id/bboyle/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/steam/" alt="" />
+						<figcaption>spiii on Steam</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="gamer">
-			<a href="http://steamcommunity.com/id/bboyle/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/steam/" alt="" />
-					<figcaption>spiii on Steam</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="gamer">
+				<a href="http://raptr.com/spiii/about">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/raptr/" alt="" />
+						<figcaption>spiii on Raptr</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="gamer">
-			<a href="http://raptr.com/spiii/about">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/raptr/" alt="" />
-					<figcaption>spiii on Raptr</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="gamer video">
+				<a href="http://www.youtube.com/user/bboyle1108/videos?view=0">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/youtube/" alt="" />
+						<figcaption>bboyle1108’s YouTube channel</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="gamer video">
-			<a href="http://www.youtube.com/user/bboyle1108/videos?view=0">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/youtube/" alt="" />
-					<figcaption>bboyle1108’s YouTube channel</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="sunshine video study animator art">
+				<a href="https://vimeo.com/bboyle">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/vimeo/" alt="" />
+						<figcaption>Vimeo (animation studies)</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="sunshine video study animation art">
-			<a href="https://vimeo.com/bboyle">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/vimeo/" alt="" />
-					<figcaption>Vimeo (animation studies)</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="sunshine study music bass">
+				<a href="https://soundcloud.com/benjaminsboyle">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/soundcloud/" alt="" />
+						<figcaption>SoundCloud (learning bass)</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="sunshine study music bass">
-			<a href="https://soundcloud.com/benjaminsboyle">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/soundcloud/" alt="" />
-					<figcaption>SoundCloud (learning bass)</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="sunshine art">
+				<a href="http://ultimate.benboyle.id.au/art/2013/scifi30/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/art-30day-scifi/" alt="" />
+						<figcaption>30 Day SciFi Drawing Challenge</figcaption>
+					</figure>
+				</a>
+			</li>
 
-		<li class="sunshine art">
-			<a href="http://ultimate.benboyle.id.au/art/2013/scifi30/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/art-30day-scifi/" alt="" />
-					<figcaption>30 Day SciFi Drawing Challenge</figcaption>
-				</figure>
-			</a>
-		</li>
+			<li class="sunshine art">
+				<a href="http://ultimate.benboyle.id.au/art/2013/100/">
+					<figure>
+						<img src="http://media.benboyle.id.au/thumb/web/my/art-100day/" alt="" />
+						<figcaption>100 drawing challenge</figcaption>
+					</figure>
+				</a>
+			</li>
+		</ul>
+	</section>
 
-		<li class="sunshine art">
-			<a href="http://ultimate.benboyle.id.au/art/2013/100/">
-				<figure>
-					<img src="http://media.benboyle.id.au/thumb/web/my/art-100day/" alt="" />
-					<figcaption>100 drawing challenge</figcaption>
-				</figure>
-			</a>
-		</li>
+	<section id="web-developer">
+		<h2>Web developer</h2>
 
-	</ul>
-</nav>
+		<a href="https://spiii.wordpress.com/2015/04/07/helping-people-make-websites/">Helping people make websites</a>
+		<img src="https://c4.staticflickr.com/8/7634/16821036249_1942658130_n.jpg" width="320" height="139" alt="Global alert bar editor">
 
-<iframe src="https://player.vimeo.com/video/106165506" width="330" height="244" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<h3>Open source contributions</h3>
+		<p>I have made modest contributions to open source projects.</p>
+		<ul>
+			<li><a href="https://github.com/watir/watir-webdriver/issues/217">HTML5 form input type support in watir-webdriver</a> (<time datetime="2013-08-23">August 2013</time>)</li>
+			<li><a href="https://meetings.jquery.org/2011-07-30-testing/">Prototype website for jQuery testing team</a> (<time datetime="2011-07-30">July 2011</time>)</li>
+			<li><a href="http://bugs.jqueryui.com/ticket/7094">Fixed bug in jQuery UI: Buttons problem in Opera</a> (<time datetime="2011-05-16">May 2011</time>)</li>
+			<li><a href="https://www.w3.org/Search/Mail/Public/advanced_search?keywords=&amp;hdr-1-name=subject&amp;hdr-1-query=&amp;hdr-2-name=from&amp;hdr-2-query=benjamins.boyle%40gmail.com&amp;hdr-3-name=message-id&amp;hdr-3-query=&amp;period_month=&amp;period_year=&amp;index-grp=Public__FULL&amp;index-type=t&amp;type-index=public-html&amp;resultsperpage=20&amp;sortby=date">HTML5 Working Group</a> (<time datetime="2007-05-30">May 2007</time> – <time datetime="2009-08-06">August 2009</time>)</li>
+		</ul>
+
+		github
+
+		Sample commit: <a href="https://github.com/bboyle/html5-constraint-validation-API/issues/20">HTML5 validation polyfill: polyfill does not work in google earth internal browser</a>
+	</section>
+
+
+	<section id="dad">
+		<h2>Dad</h2>
+	</section>
+
+
+	<section id="gamer">
+		<h2>Gamer</h2>
+	</section>
+
+
+	<section id="mentor">
+		<h2>Mentor</h2>
+	</section>
+
+
+	<section id="animator">
+		<h2>Animator</h2>
+
+		<iframe src="https://player.vimeo.com/video/106165506" width="330" height="244" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+	</section>
+
+
+	<section id="universal-design">
+		<h2>Universal design advocate</h2>
+	</section>
+
+
+	<section id="gadgets">
+		<h2>Fan of gadgets</h2>
+	</section>
+
+
+	<section id="sunshine">
+		<h2>Fan of sunshine</h2>
+	</section>
+</main>
+
 
 <aside id="spi">
 	<h2>spi? spii? spiii?</h2>
@@ -303,6 +502,20 @@ aside {
 </aside>
 
 	<script>
+		// css hook
+		if ( document.addEventListener ) {
+			document.addEventListener( 'click', function( event ) {
+				var target;
+				if ( event.target.tagName === 'A' ) {
+					target = event.target.href.replace( /^.*?#/, '' );
+				}
+				document.body.className = target || 'main';
+				document.getElementById( target ).focus()
+				window.scroll( 0, 0 );
+				event.preventDefault();
+			});
+		}
+
 
 		// analytics
 		var _gaq = _gaq || [];
